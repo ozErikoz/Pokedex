@@ -73,10 +73,10 @@ class PokemonPage extends StatelessWidget {
                   bottom: 0,
                   child: Container(
                     width: 400,
-                    padding: EdgeInsets.only(bottom: 10, top: 8),
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 25),
                     height: MediaQuery.of(context).size.height / 2.5,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade50,
+                      color: Colors.white,
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(50)),
                     ),
@@ -119,7 +119,7 @@ class PokemonPage extends StatelessWidget {
                           ],
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Column(
@@ -128,9 +128,9 @@ class PokemonPage extends StatelessWidget {
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                   decoration: BoxDecoration(
-                                    color: Colors.green.shade600,
+                                    color: Colors.green.shade500,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
+                                        BorderRadius.all(Radius.circular(6)),
                                     boxShadow: [
                                       BoxShadow(
                                           color: Colors.green.shade900,
@@ -152,14 +152,11 @@ class PokemonPage extends StatelessWidget {
                                 Container(
                                   margin: EdgeInsets.only(top: 15),
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
                                           Text(
-                                            'Hp: ',
+                                            'Hp: '.toUpperCase(),
                                             style: TextStyle(
                                                 fontFamily: 'Poppins',
                                                 fontSize: 16,
@@ -185,7 +182,7 @@ class PokemonPage extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 10),
                                             child: Text(
-                                              'Attack: ',
+                                              'Atk: '.toUpperCase(),
                                               style: TextStyle(
                                                   fontFamily: 'Poppins',
                                                   fontSize: 16,
@@ -216,7 +213,7 @@ class PokemonPage extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 10),
                                             child: Text(
-                                              'Defense: ',
+                                              'def: '.toUpperCase(),
                                               style: TextStyle(
                                                   fontFamily: 'Poppins',
                                                   fontSize: 16,
@@ -247,7 +244,7 @@ class PokemonPage extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 10),
                                             child: Text(
-                                              'Speed: ',
+                                              'Spe: '.toUpperCase(),
                                               style: TextStyle(
                                                   fontFamily: 'Poppins',
                                                   fontSize: 16,
@@ -279,19 +276,17 @@ class PokemonPage extends StatelessWidget {
                               ],
                             ),
                             Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                   decoration: BoxDecoration(
-                                    color: Colors.deepPurple.shade600,
+                                    color: Colors.deepPurple.shade500,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
+                                        BorderRadius.all(Radius.circular(6)),
                                     boxShadow: [
                                       BoxShadow(
-                                          color: Colors.purple.shade900,
+                                          color: Colors.deepPurple.shade900,
                                           offset: Offset(0, 3),
                                           blurRadius: 0,
                                           spreadRadius: -1),
@@ -311,9 +306,6 @@ class PokemonPage extends StatelessWidget {
                                 Container(
                                   margin: EdgeInsets.only(top: 15),
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
@@ -355,16 +347,14 @@ class PokemonPage extends StatelessWidget {
                               ],
                             ),
                             Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                   decoration: BoxDecoration(
-                                    color: Colors.red.shade600,
+                                    color: Colors.red.shade500,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
+                                        BorderRadius.all(Radius.circular(6)),
                                     boxShadow: [
                                       BoxShadow(
                                           color: Colors.red.shade900,
@@ -386,9 +376,6 @@ class PokemonPage extends StatelessWidget {
                                 Container(
                                   margin: EdgeInsets.only(top: 15),
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
