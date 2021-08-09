@@ -11,33 +11,3 @@ Future pokeinfo(int position) async {
 
   return json;
 }
-
-class Pokename {
-  Map name;
-
-  Pokename(Map this.name);
-}
-
-class Ability {
-  Map ability;
-
-  Ability(Map this.ability);
-}
-
-class Images {
-  Map frontDefault;
-
-  Images(Map this.frontDefault);
-}
-
-class Stats {
-  Map stat;
-
-  Stats(Map this.stat);
-}
-
-class Types {
-  Map types;
-
-  Types(Map this.types);
-}

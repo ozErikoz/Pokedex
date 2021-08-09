@@ -10,7 +10,7 @@ class PokedexPage extends StatefulWidget {
 class _PokedexPageState extends State<PokedexPage> {
   final ScrollController _scrollController = ScrollController();
   bool widgetVisible = false;
-  List<PokeList> elements = [];
+  List elements = [];
 
   void showWidget() {
     createList();
@@ -30,9 +30,9 @@ class _PokedexPageState extends State<PokedexPage> {
   }
 
   void createList() async {
-    List<PokeList> _elements = [];
+    List _elements = [];
 
-    for (int i = 1; i < 8; i++) {
+    for (int i = 1; i < 151; i++) {
       Map currentData = await pokeinfo(i);
       _elements.add(PokeList(currentData));
     }
@@ -48,7 +48,7 @@ class _PokedexPageState extends State<PokedexPage> {
       debugShowCheckedModeBanner: false,
       title: 'Pokedex com PokeAPI',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.purple,
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -57,8 +57,10 @@ class _PokedexPageState extends State<PokedexPage> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.catching_pokemon_rounded),
-              color: Colors.white,
+              icon: Image.asset(
+                'assets/images/pokeballAppBar.png',
+                width: 28,
+              ),
               onPressed: showWidget,
             ),
           ],
