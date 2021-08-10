@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ConstsApi {
+  Map data;
+  ConstsApi(Map this.data);
+
   static Color getColorType({type}) {
     switch (type) {
       case 'normal':
@@ -42,5 +45,29 @@ class ConstsApi {
       default:
         return Colors.grey.shade200;
     }
+  }
+
+  static String _setColor(data) {
+    if (data['types'].length > 1 &&
+        data['types'][0]['type']['name'] == 'normal') {
+      return data['types'][1]['type']['name'];
+    }
+    return data['types'][0]['type']['name'];
+  }
+
+  static String _getType(data) {
+    if (data['types'].length > 1 &&
+        data['types'][0]['type']['name'] != 'null') {
+      return data['types'][1]['type']['name'];
+    }
+    return '';
+  }
+
+  static String _getAbility(data) {
+    if (data['abilities'].length > 0 &&
+        data['abilities'][1]['ability']['name'] != 'null') {
+      return data['abilities'][1]['ability']['name'];
+    }
+    return '';
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:pokedex/api/poketype_colors.dart';
@@ -20,6 +18,14 @@ class PokemonPage extends StatelessWidget {
     if (data['types'].length > 1 &&
         data['types'][0]['type']['name'] != 'null') {
       return data['types'][1]['type']['name'];
+    }
+    return '';
+  }
+
+  String _getAbility() {
+    if (data['abilities'].length > 0 &&
+        data['abilities'][1]['ability']['name'] != 'null') {
+      return data['abilities'][1]['ability']['name'];
     }
     return '';
   }
@@ -328,7 +334,7 @@ class PokemonPage extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 10),
                                             child: Text(
-                                              'a'.toUpperCase(),
+                                              _getAbility().toUpperCase(),
                                               style: TextStyle(
                                                   fontFamily: 'Poppins',
                                                   fontSize: 16,
