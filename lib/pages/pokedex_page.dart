@@ -52,8 +52,27 @@ class _PokedexPageState extends State<PokedexPage> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Pokedex',
+          leadingWidth: 100,
+          leading: Center(
+            child: Text(
+              'Pokedex',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          centerTitle: true,
+          title: IconButton(
+            icon: Icon(Icons.home),
+            iconSize: 28,
+            onPressed: () {
+              _scrollController.animateTo(
+                  _scrollController.position.minScrollExtent,
+                  duration: const Duration(milliseconds: 1000),
+                  curve: Curves.fastOutSlowIn);
+            },
           ),
           actions: [
             IconButton(
@@ -96,18 +115,6 @@ class _PokedexPageState extends State<PokedexPage> {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          tooltip: 'Back to Top',
-          onPressed: () {
-            _scrollController.animateTo(
-                _scrollController.position.minScrollExtent,
-                duration: const Duration(milliseconds: 1000),
-                curve: Curves.fastOutSlowIn);
-          },
-          child: Icon(Icons.north_rounded, size: 35),
-        ),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.miniCenterFloat,
       ),
     );
   }

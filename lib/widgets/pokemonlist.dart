@@ -67,54 +67,31 @@ class PokeList extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 15),
-                        padding: EdgeInsets.symmetric(horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.red.shade900,
-                                offset: Offset(-1, 3),
-                                blurRadius: 0,
-                                spreadRadius: -1),
-                          ],
-                        ),
-                        child: Text(
-                          data['types'][0]['type']['name'],
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppins',
+                      for (int i = 0; i < data['types'].length; i++)
+                        Container(
+                          margin: EdgeInsets.only(right: 15),
+                          padding: EdgeInsets.symmetric(horizontal: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.red.shade900,
+                                  offset: Offset(-1, 3),
+                                  blurRadius: 0,
+                                  spreadRadius: -1),
+                            ],
+                          ),
+                          child: Text(
+                            data['types'][i]['type']['name'],
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Poppins',
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 15),
-                        padding: EdgeInsets.symmetric(horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.red.shade900,
-                                offset: Offset(-1, 3),
-                                blurRadius: 0,
-                                spreadRadius: -1),
-                          ],
-                        ),
-                        child: Text(
-                          _getType(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppins',
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ],

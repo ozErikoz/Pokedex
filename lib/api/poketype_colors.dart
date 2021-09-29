@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ConstsApi {
+  Map data;
+  ConstsApi(Map this.data);
+
   static Color getColorType({type}) {
     switch (type) {
       case 'normal':
